@@ -1,0 +1,28 @@
+{
+    "filename": "cat_38.png",
+    "timestamp": "2026-05-13T17:18:17.780337",
+    "shape": [
+        64,
+        64,
+        3
+    ],
+    "entropy": 7.983765849310591,
+    "processing_time": 0.0045812129974365234,
+    "parameters": {
+        "IMAGE_SIZE": [
+            64,
+            64
+        ],
+        "INPUT_FOLDER": "datasets/processed",
+        "OUTPUT_FOLDER": "datasets/final_encrypted",
+        "KEY_FOLDER": "keys/hybrid_keys",
+        "RANDOM_SEED": 42,
+        "CHAOS_R": 3.99,
+        "CHAOS_X0": 0.5,
+        "SUPPORTED_FORMATS": [
+            ".png",
+            ".jpg",
+            ".jpeg"
+        ]
+    }
+}

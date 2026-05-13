@@ -1,0 +1,48 @@
+{
+    "timestamp": "2026-05-13T17:38:48.393723",
+    "config": {
+        "IMAGE_SIZE": [
+            64,
+            64
+        ],
+        "CHANNELS": 3,
+        "DIRS": {
+            "ORIGINAL": "datasets/processed",
+            "ENCRYPTED": "datasets/final_encrypted",
+            "ML_DATASET": "datasets/ml_dataset",
+            "X_TRAIN": "datasets/ml_dataset/X",
+            "Y_TRAIN": "datasets/ml_dataset/y",
+            "METADATA": "datasets/ml_dataset/metadata"
+        },
+        "SPLIT_RATIO": 0.2,
+        "RANDOM_STATE": 42,
+        "NORMALIZE": true,
+        "SUPPORTED_FORMATS": [
+            ".png",
+            ".jpg",
+            ".jpeg"
+        ]
+    },
+    "dataset_stats": {
+        "total_pairs": 100,
+        "train_count": 80,
+        "test_count": 20,
+        "X_train_shape": [
+            80,
+            64,
+            64,
+            3
+        ],
+        "y_train_shape": [
+            80,
+            64,
+            64,
+            3
+        ],
+        "dtype": "float32",
+        "pixel_range": [
+            0.0,
+            1.0
+        ]
+    }
+}

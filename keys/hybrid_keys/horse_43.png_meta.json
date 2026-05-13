@@ -1,0 +1,28 @@
+{
+    "filename": "horse_43.png",
+    "timestamp": "2026-05-13T17:18:18.218440",
+    "shape": [
+        64,
+        64,
+        3
+    ],
+    "entropy": 7.983607408769642,
+    "processing_time": 0.005349874496459961,
+    "parameters": {
+        "IMAGE_SIZE": [
+            64,
+            64
+        ],
+        "INPUT_FOLDER": "datasets/processed",
+        "OUTPUT_FOLDER": "datasets/final_encrypted",
+        "KEY_FOLDER": "keys/hybrid_keys",
+        "RANDOM_SEED": 42,
+        "CHAOS_R": 3.99,
+        "CHAOS_X0": 0.5,
+        "SUPPORTED_FORMATS": [
+            ".png",
+            ".jpg",
+            ".jpeg"
+        ]
+    }
+}
