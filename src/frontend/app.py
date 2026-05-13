@@ -1,6 +1,8 @@
+from ui.display import render_home, render_encryption_ui, render_decryption_ui
 import streamlit as st
 import sys
 import os
+
 
 # Absolute path fixing for modular imports
 current_dir = os.path.dirname(os.path.abspath(__file__))
