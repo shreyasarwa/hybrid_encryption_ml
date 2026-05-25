@@ -6,7 +6,7 @@ This project implements a multi-stage approach combining classical permutation-d
 
 ---
 
-## 🌌 Project Architecture & Complete Stage Breakdown
+##  Project Architecture & Complete Stage Breakdown
 
 The system is engineered as a sequential pipeline divided into distinct operational modules. Each stage handles a dedicated layer of data processing, security enforcement, or machine learning evaluation.
 
@@ -55,7 +55,7 @@ A modern, web-based graphical interface that abstracts the underlying python exe
 
 ---
 
-## 🛠️ Installation & Workspace Setup
+##  Installation & Workspace Setup
 
 ### Prerequisites
 * **Operating System:** Windows 10/11, macOS, or Linux
