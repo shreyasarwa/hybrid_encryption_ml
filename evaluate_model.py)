@@ -1,0 +1,77 @@
+import os
+import numpy as np
+import tensorflow as tf
+from PIL import Image
+from skimage.metrics import structural_similarity as ssim
+from skimage.metrics import peak_signal_noise_ratio as psnr
+
+def run_standalone_eval():
+    print("\n" + "="*55)
+    print("🚀 OFFLINE MODEL ACCURACY EVALUATOR")
+    print("="*55)
+
+    # 1. SETUP PATHS (Based on your sidebar)
+    model_path = "models/saved_models/final_autoencoder.h5"
+    # We'll pull from datasets/raw as seen in your image_0acf61.png
+    input_dir = "datasets/raw"
+    
+    if not os.path.exists(model_path):
+        print(f"❌ Error: Model not found at {model_path}")
+        return
+
+    # 2. FIND AN IMAGE
+    # Try to find the first .jpg or .png in your raw folder
+    sample_file = None
+    if os.path.exists(input_dir):
+        files = [f for f in os.listdir(input_dir) if f.endswith(('.jpg', '.png', '.jpeg'))]
+        if files:
+            sample_file = os.path.join(input_dir, files[0])
+    
+    if not sample_file:
+        print(f"⚠️ No images found in {input_dir}. Please add an image there!")
+        return
+
+    print(f"🔍 Testing with: {sample_file}")
+
+    try:
+        # 3. LOAD MODEL
+        model = tf.keras.models.load_model(model_path, compile=False)
+        
+        # 4. PREPROCESS (Matching your 64x64 requirement)
+        original_img = Image.open(sample_file).convert('RGB')
+        # Ground Truth for comparison
+        ground_truth = original_img.resize((64, 64))
+        gt_array = np.array(ground_truth) / 255.0
+        
+        # Input for Model
+        input_batch = np.expand_dims(gt_array, axis=0)
+
+        # 5. INFERENCE
+        reconstructed_batch = model.predict(input_batch, verbose=0)
+        recon_array = np.squeeze(reconstructed_batch)
+
+        # 6. CALCULATE ACCURACY
+        # We compare gt_array vs recon_array
+        s_score = ssim(gt_array, recon_array, channel_axis=2, data_range=1.0)
+        p_score = psnr(gt_array, recon_array, data_range=1.0)
+        mse = np.mean((gt_array - recon_array) ** 2)
+
+        # 7. DISPLAY RESULTS
+        print("-" * 55)
+        print(f"🏆 ACCURACY METRICS:")
+        print(f"   🔹 SSIM: {s_score:.4f} (Target: > 0.85)")
+        print(f"   🔹 PSNR: {p_score:.2f} dB (Target: > 30.0)")
+        print(f"   🔹 MSE : {mse:.6f} (Target: < 0.01)")
+        print("-" * 55)
+
+        # 8. OPTIONAL: Save the result to datasets/reconstructed
+        save_path = "datasets/reconstructed/eval_result.png"
+        recon_img = Image.fromarray((recon_array * 255).astype(np.uint8))
+        recon_img.save(save_path)
+        print(f"✅ Comparison image saved to: {save_path}")
+
+    except Exception as e:
+        print(f"❌ Evaluation failed: {e}")
+
+if __name__ == "__main__":
+    run_standalone_eval()

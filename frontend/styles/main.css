@@ -1,0 +1,84 @@
+/* 1. Global App Background & Font */
+.stApp {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Inter', sans-serif;
+}
+
+/* 2. Floating Top Navbar Container */
+.nav-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1200px;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* 3. Content Spacing - Prevents overlap with floating Nav */
+.stAppViewMain {
+    padding-top: 120px !important;
+}
+
+/* 4. Glassmorphism Card Style */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* 5. Custom Button Styling (Navbar & Actions) */
+.stButton>button {
+    background-color: rgba(162, 210, 255, 0.8) !important;
+    color: #4A4A4A !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 8px 20px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.stButton>button:hover {
+    background-color: #BDE0FE !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(162, 210, 255, 0.4);
+}
+
+/* 6. Typography */
+h1, h2, h3 {
+    color: #2D3436;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px;
+}
+
+/* 7. Hide Default Streamlit Elements (Sidebar & Header) */
+[data-testid="stSidebar"], 
+[data-testid="stHeader"], 
+[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+/* 8. Status Indicator Labels */
+.status-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c757d;
+}
