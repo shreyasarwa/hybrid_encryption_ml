@@ -4,8 +4,6 @@
 
 [![Live Demo](https://img.shields.io/badge/_Live_Demo-Open_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://hybridencryptionml.streamlit.app)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/shreyasarwa/hybrid_encryption_ml)
-
 ---
 
 An advanced, production-ready cybersecurity and deep learning pipeline designed to protect digital imagery using layered cryptographic primitives, followed by neural network-driven image restoration. 
