@@ -1,9 +1,10 @@
-streamlit>=1.32.0
-tensorflow>=2.15.0
-opencv-python-headless
+streamlit
+tensorflow
 numpy
-pandas
-plotly
-Pillow
-scikit-image
+opencv-python-headless
+pillow
 matplotlib
+plotly
+pandas
+scikit-image
+scikit-learn
