@@ -1,7 +1,5 @@
 # Machine Learning Analysis of Hybrid Image Encryption and Decryption System
 
-### Advanced Hybrid Cryptography + Deep Learning Reconstruction Pipeline
-
 [![Live Demo](https://img.shields.io/badge/_Live_Demo-Open_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://hybridencryptionml.streamlit.app)
 
 An advanced, production-ready cybersecurity and deep learning pipeline designed to protect digital imagery using layered cryptographic primitives, followed by neural network-driven image restoration. 
