@@ -2,6 +2,8 @@
 
 [![Live Demo](https://img.shields.io/badge/_Live_Demo-Open_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://hybridencryptionml.streamlit.app)
 
+---
+
 An advanced, production-ready cybersecurity and deep learning pipeline designed to protect digital imagery using layered cryptographic primitives, followed by neural network-driven image restoration. 
 
 This project implements a multi-stage approach combining classical permutation-diffusion architectures with Modern Convolutional Autoencoders to analyze, encrypt, decrypt, and visually reconstruct high-resolution images.
