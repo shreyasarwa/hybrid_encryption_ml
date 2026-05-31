@@ -2,7 +2,7 @@
 
 ---
 
-[![Live Demo](https://hybridencryptionml.streamlit.app)
+(https://hybridencryptionml.streamlit.app)
 
 ---
 
